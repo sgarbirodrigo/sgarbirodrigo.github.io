@@ -1,58 +1,104 @@
+# -----------------------------------------
+# Site Configuration & Basic Metadata
+# -----------------------------------------
+title: "Rodrigo Sgarbi | Developer & Problem Solver"
+description: "Showcasing my professional background, selected projects, and technical expertise. Connect with me to learn more or collaborate."
+lang: en
 layout: sidebar
 style: light
 
-plugins:
-  - jekyll-octicons
-  - jekyll-github-metadata
-  - jemoji
-
+# -----------------------------------------
+# URL & Permalinks
+# -----------------------------------------
 permalink: /:year/:month/:day/:title/
 
+# -----------------------------------------
+# Plugins
+# -----------------------------------------
+plugins:
+  - jekyll-seo-tag         # Provides SEO tags (e.g., Open Graph, Twitter Cards)
+  - jekyll-sitemap         # Generates a sitemap.xml for search engines
+  - jekyll-feed            # Adds an RSS feed for your posts
+  - jekyll-github-metadata # Grabs GitHub data for project list
+  - jemoji                 # Allows GitHub-flavored emoji
+  - jekyll-octicons        # GitHub Octicons for icons in Markdown
+
+# -----------------------------------------
+# Defaults (for posts, pages, etc.)
+# -----------------------------------------
 defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
+  - scope:
+      path: ""    # an empty string here means all files in the project
       type: "posts"
     values:
       layout: "post"
 
+# -----------------------------------------
+# Personal / Author Information
+# -----------------------------------------
+author:
+  name: "Rodrigo Sgarbi"
+  email: "sgarbi.rodrigo@gmail.com"
+  url: "https://sgarbirodrigo.github.io" # or your LinkedIn URL
+  # Additional fields (optional):
+  headline: "Full-Stack Developer | Submarine Officer | Naval Science | Python"
+  company: "Brazilian Navy Full Stack Developer"
+  location: "Rio de Janeiro, Brazil"
+
+# -----------------------------------------
+# Open Graph & Social Media
+# -----------------------------------------
+# (Used by jekyll-seo-tag, LinkedIn, Twitter, and other platforms)
+social:
+  name: "Rodrigo Sgarbi"
+  links:
+    - "https://linkedin.com/in/rodrigosgarbi"
+    - "https://github.com/sgarbirodrigo"
+    #- "https://twitter.com/your-twitter-username"
+    # Add or remove as needed
+
+# -----------------------------------------
+# Projects Configuration
+# -----------------------------------------
 projects:
-  sort_by: pushed
-  # sort_by options:
-  #   - pushed
-  #   - stars
+  sort_by: pushed          # sort_by options: [pushed, stars]
   limit: 9
   exclude:
     archived: false
     forks: true
     projects:
-    # - repo-name
+      # - repo-name
 
-# social_media:
-  # behance: your_username
-  # dribbble: your_username
-  # facebook: your_username
-  # hackerrank: your_username
-  # instagram: your_username
-  # keybase: your_username
-  # linkedin: your_username
-  # mastodon: your_username
-  # medium: your_username
-  # stackoverflow: your_user_id
-  # telegram: your_username
-  # twitter: your_username
-  # unsplash: your_username
-  # vk: your_username
-  # website: http://your_website_url
-  # youtube: your_username
-
+# -----------------------------------------
+# Topics Section
+# -----------------------------------------
 topics:
-  - name: CSS
-    web_url: https://github.com/topics/css
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
+  - name: Django
+    web_url: https://github.com/topics/django
+    image_url: https://raw.githubusercontent.com/github/explore/main/topics/django/django.png
 
-  - name: Web design
+  - name: Python
+    web_url: https://github.com/topics/python
+    image_url: https://raw.githubusercontent.com/github/explore/main/topics/python/python.png
 
-  - name: Sass
-    web_url: https://github.com/topics/sass
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/sass/sass.png
+  - name: Bootstrap
+    web_url: https://github.com/topics/bootstrap
+    image_url: https://raw.githubusercontent.com/github/explore/main/topics/bootstrap/bootstrap.png
+
+# -----------------------------------------
+# Additional SEO & Build Options
+# -----------------------------------------
+# Enable GitHub Pages' recommended markdown processor
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# If you have verification codes for search engines, you can add them here:
+# google_site_verification: "YOUR_GOOGLE_VERIFICATION_CODE"
+# bing_site_verification: "YOUR_BING_VERIFICATION_CODE"
+
+# If you want to customize or add custom includes, layouts, or data directories:
+# include: [".htaccess"]
+# exclude: ["node_modules", "vendor", "Gemfile", "Gemfile.lock"]
+
+# End of config
